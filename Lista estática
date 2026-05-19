@@ -3,13 +3,9 @@
 
 #define MAX 10
 
-char mochila[MAX][30] = {
-    "Espada",
-    "Pocao",
-    "Escudo"
-};
+char mochila[MAX][30] = {0};
   
-int quantidade = 3;
+int quantidade = 0;
 
 void inserirItem() {
 
@@ -31,6 +27,12 @@ void inserirItem() {
 void listarItens() {
 
     printf("\n=== ITENS DA MOCHILA ===\n");
+
+    // Se a quantidade for 0, avisa o usuário que não há nada para listar
+    if (quantidade == 0) {
+        printf("A mochila está vazia.\n");
+        return;
+    }
 
     for (int i = 0; i < quantidade; i++) {
 
